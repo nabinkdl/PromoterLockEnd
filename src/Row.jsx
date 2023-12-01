@@ -1,19 +1,26 @@
 import React from 'react'
 
-function Row() {
-  return (
-    <div>
+function Row(props) {
 
-        <tr>
-          <th>1</th> 
-          <td>Cy Ganderton</td> 
-          <td>Quality Control Specialist</td> 
-          <td>Littel, Schaden and Vandervort</td> 
-          <td>Canada</td> 
-          <td>12/16/2020</td> 
-          <td>Blue</td>
+ console.log(props)
+
+  return (
+
+<>
+
+      <tr>
+          <th>{props.SN}</th> 
+          <td>{props.SYMBOL}</td> 
+          <td>{props.AllotmentDate}</td> 
+          <td>{props.NumberOfShares}</td> 
+          <td>{props.PromoterShares}</td> 
+          <td>{props.PromoterHolding}</td> 
+          <td>{props.LockendDate}</td>
+          {/* <td>04</td> */}
         </tr>
-    </div>
+
+        </>   
+
   )
 }
 

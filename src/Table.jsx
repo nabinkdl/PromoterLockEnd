@@ -1,6 +1,19 @@
 import React from 'react'
+import Row from './Row'
 import lockend from './lockend'
 function Table() {
+
+    const row = lockend.map(item => {
+        return (
+          <Row
+          key={item.id}
+          item ={item}
+          
+          
+        />
+      )}
+      )
+
   return (
     <div className='grid h-screen place-items-center"'><div className="overflow-x-auto">
     <table className="table table-xs">
@@ -11,22 +24,18 @@ function Table() {
           <th>AllotmentDate</th> 
           <th>NumberOfShares</th> 
           <th>PromoterShares</th> 
-          <th>PromoterHolding</th> 
+          <th style={{color: "red"}}>PromoterHolding</th> 
           <th>LockendDate</th>
           {/* <th>Days left</th> */}
         </tr>
       </thead> 
       <tbody>
-      <tr>
-          <th>{lockend[0].SN}</th> 
-          <td>{lockend[0].SYMBOL}</td> 
-          <td>{lockend[0].AllotmentDate}</td> 
-          <td>{lockend[0].NumberOfShares}</td> 
-          <td>{lockend[0].PromoterShares}</td> 
-          <td>{lockend[0].PromoterHolding}</td> 
-          <td>{lockend[0].LockendDate}</td>
-          {/* <td>04</td> */}
-        </tr>
+                {lockend.map(item => { return <Row
+          key={item.id}
+          item ={item}
+          
+          
+        /> })}
         <tr>
           <th>2</th> 
           <td>Hart Hagerty</td> 
