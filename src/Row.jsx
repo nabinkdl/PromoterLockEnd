@@ -10,11 +10,11 @@ function Row({SN,SYMBOL,AllotmentDate,NumberOfShares,PromoterShares,PromoterHold
       <tr>
           <th>{SN}</th> 
           <td>{SYMBOL}</td> 
-          <td>{AllotmentDate}</td> 
-          <td>{NumberOfShares}</td> 
-          <td>{PromoterShares}</td> 
-          <td>{PromoterHolding}</td> 
-          <td>{LockendDate}</td> 
+          <td className='p-3 text-center'>{NumberOfShares}</td> 
+          <td className='p-3 text-center'>{PromoterShares}</td> 
+          <td className='p-3 text-center'>{AllotmentDate}</td> 
+          <td className='p-3 text-center'>{PromoterHolding}</td> 
+          <td className='p-3 text-center'>{LockendDate}</td> 
           {/* <td>04</td> */}
         </tr>
 

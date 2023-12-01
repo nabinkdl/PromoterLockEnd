@@ -1,14 +1,16 @@
 import React from 'react'
 import Row from './Row'
+import Search from './Search'
 import lockend from './lockend'
 function Table() {
 
    
 
   return (
-    <div className=' h-auto w-full  flex  justify-center'>
-      <div className='bg-[#141414] text-white  mt-32 mb-5 rounded-md'>
-        <table className=" ">
+    <div className=' bg-[#d5d5d5] h-auto w-full  flex  justify-center '>
+      <Search/>
+      <div className='bg-[#1f1d0f] text-white  mt-32 mb-5 rounded-md p-4'>
+        <table className=" divide-dashed ">
           <thead>
             <tr>
               <th className='p-3' >😄</th>
@@ -22,7 +24,9 @@ function Table() {
               <th className='p-3'>Lockend Date</th>
               {/* <th>Days left</th> */}
             </tr>
+            
           </thead>
+         
           <tbody>
             {lockend.map(
               ({
@@ -35,6 +39,7 @@ function Table() {
                 LockendDate,
               }) => {
                 return <Row SYMBOL={SYMBOL}
+                key={SN}
                 SN={SN}
                 AllotmentDate={AllotmentDate}
                 NumberOfShares={NumberOfShares}
