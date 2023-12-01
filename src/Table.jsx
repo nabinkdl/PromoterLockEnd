@@ -10,7 +10,7 @@ function Table() {
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
-  const getata=(data)=>{
+  const getdata=(data)=>{
 
 
   }
