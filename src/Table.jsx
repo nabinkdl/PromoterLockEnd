@@ -19,7 +19,7 @@ function Table() {
     <div className='bg-[#d5d5d5] h-auto w-full flex justify-center py-5'>
       <div className='absolute text-gray-600'>
         <div>
-        We disclaim responsibility for any inaccuracies in the data; this information is provided solely for learning purposes.
+        We disclaim responsibility for any inaccuracies in the data; this information is provided solely during learning purposes.
        </div>
         <input
           type='text'
