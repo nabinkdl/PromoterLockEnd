@@ -8,14 +8,13 @@ function Row({SN,SYMBOL,AllotmentDate,NumberOfShares,PromoterShares,PromoterHold
   var timeDifference = targetDate.getTime() - currentDate.getTime();
   var remainingDays = Math.ceil(timeDifference / (1000 * 3600 * 24))-1;
 
-
+ 
 
   return (
 
 <>
-
-      <tr>
-          <th>{SN}</th> 
+{remainingDays>=0 ?  (      <tr>
+          <th>{}</th> 
           <td>{SYMBOL}</td> 
           <td className='p-3 text-center'>{AllotmentDate}</td> 
           <td className='p-3 text-center'>{NumberOfShares}</td> 
@@ -25,7 +24,8 @@ function Row({SN,SYMBOL,AllotmentDate,NumberOfShares,PromoterShares,PromoterHold
           <td className='p-3 text-center'>{remainingDays===-1?0:remainingDays}</td> 
 
           {/* <td>04</td> */}
-        </tr>
+        </tr>): null}
+
 
         </>   
 

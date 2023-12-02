@@ -7,7 +7,7 @@ export default
           "NumberOfShares":4200000,
           "PromoterShares":3150000,
           "PromoterHolding":75,
-          "LockendDate":"2023-12-03"
+          "LockendDate":"2023-10-03"
        },
        {
           "SN":2,
@@ -16,7 +16,7 @@ export default
           "NumberOfShares":19680270,
           "PromoterShares":15744216,
           "PromoterHolding":80,
-          "LockendDate":"2023-12-05"
+          "LockendDate":"2023-12-3"
        },
        {
           "SN":3,
