@@ -10,10 +10,13 @@ function Table() {
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
-  const getdata=(data)=>{
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
+  const handleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
 
-  }
 
   return (
     <div className='bg-[#d5d5d5] h-auto w-full flex justify-center py-5'>
