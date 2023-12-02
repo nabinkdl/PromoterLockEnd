@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Row from './Row';
 import lockend from './lockend';
 
@@ -10,23 +10,40 @@ function Table() {
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  
 
-  const handleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  };
+  const [theme,setTheme]= useState(localStorage.getItem("theme")?localStorage.getItem("theme"):'light');
+    const  handleTheme=()=>{
+        if(theme==='light')
+        {
+          setTheme('dark')
+        }
+        else{
+          setTheme('light')
+          const html = document.querySelector('html');
+          html.classList.remove('dark')
+        }
+  
+      }
+      useEffect(()=>{
+        localStorage.setItem('theme',theme);
+        const localTheme= localStorage.getItem('theme');
+        const html = document.querySelector('html');
+        html.classList.add(localTheme)
+      },[theme])
+      
+
 
 
   return (
-    <div className='bg-[#d5d5d5] h-auto w-full flex justify-center py-5'>
+    <div className='bg-[#d5d5d5] dark:bg-indigo-600 transition-all h-auto w-full flex justify-center py-5'>
       <div className='absolute top-6 right-6'>
         <button onClick={handleTheme} className='bg-yellow-500 p-6 rounded-3xl'>
           {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
         </button>
       </div>
       <div className='absolute text-gray-600'>
-        <div>
+        <div className=' dark:text-white transition-all'>
         We disclaim responsibility for any inaccuracies in the data; this information is provided solely during
          learning purposes.
        </div>
