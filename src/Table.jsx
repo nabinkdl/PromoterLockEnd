@@ -10,10 +10,29 @@ function Table() {
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
-  const getdata=(data)=>{
+  // const sortedDataAscending= filteredLockend.sort((a,b)=>a.SYMBOL.localeCompare(b.SYMBOL))
+// Original array
 
 
-  }
+// Get the current date
+const currentDate = new Date();
+
+// Filter the array and calculate remaining days
+let newArray = filteredLockend.filter(item => {
+  // Convert LockendDate to a Date object
+  const lockendDate = new Date(item.LockendDate);
+  
+  // Calculate remaining days
+  const remainingDays = Math.ceil((lockendDate - currentDate) / (1000 * 60 * 60 * 24));
+
+  // Include objects with remaining days more than 0
+  return remainingDays > -1;
+});
+
+// Display the new array
+console.log("New array with remaining days more than 0:", newArray);
+
+
 
   return (
     <div className='bg-[#d5d5d5] h-auto w-full flex justify-center py-5'>
@@ -41,12 +60,11 @@ function Table() {
               <th className='p-3'>Promoter Holding</th>
               <th className='p-3'>Lockend Date</th>
               <th className='p-3'>Remaining Days</th>
-
             </tr>
           </thead>
           <tbody>
-            {filteredLockend.map((data) => {
-              return <Row key={data.SN} {...data} />;
+            {newArray.map((data,index) => {
+              return <Row key={data.SN} data={data}  index={index}/>;
             })}
           </tbody>
         </table>
