@@ -10,29 +10,20 @@ function Table() {
       value.toString().toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
-  
+  // const sortedDataAscending= filteredLockend.sort((a,b)=>a.SYMBOL.localeCompare(b.SYMBOL))
+// Original array
 
-  const [theme,setTheme]= useState(localStorage.getItem("theme")?localStorage.getItem("theme"):'light');
-    const  handleTheme=()=>{
-        if(theme==='light')
-        {
-          setTheme('dark')
-        }
-        else{
-          setTheme('light')
-          const html = document.querySelector('html');
-          html.classList.remove('dark')
-        }
-  
-      }
-      useEffect(()=>{
-        localStorage.setItem('theme',theme);
-        const localTheme= localStorage.getItem('theme');
-        const html = document.querySelector('html');
-        html.classList.add(localTheme)
-      },[theme])
-      
 
+const currentDate = new Date();
+
+let newArray = filteredLockend.filter(item => {
+  const lockendDate = new Date(item.LockendDate);
+  const remainingDays = Math.ceil((lockendDate - currentDate) / (1000 * 60 * 60 * 24));
+  return remainingDays > -1;
+});
+
+// Display the new array
+console.log("New array with remaining days more than 0:", newArray);
 
 
   return (
@@ -67,12 +58,11 @@ function Table() {
               <th className='p-3'>Promoter Holding</th>
               <th className='p-3'>Lockend Date</th>
               <th className='p-3'>Remaining Days</th>
-
             </tr>
           </thead>
           <tbody>
-            {filteredLockend.map((data) => {
-              return <Row key={data.SN} {...data} />;
+            {newArray.map((data,index) => {
+              return <Row key={data.SN} data={data}  index={index}/>;
             })}
           </tbody>
         </table>
