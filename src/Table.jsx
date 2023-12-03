@@ -14,6 +14,33 @@ function Table() {
 // Original array
 
 
+
+  // Darkmode
+
+
+   const [theme,setTheme]= useState(localStorage.getItem("theme")?localStorage.getItem("theme"):'light');
+    const  handleTheme=()=>{
+        if(theme==='light')
+        {
+          setTheme('dark')
+        }
+        else{
+          setTheme('light')
+          const html = document.querySelector('html');
+          html.classList.remove('dark')
+        }
+  
+      }
+      useEffect(()=>{
+        localStorage.setItem('theme',theme);
+        const localTheme= localStorage.getItem('theme');
+        const html = document.querySelector('html');
+        html.classList.add(localTheme)
+      },[theme])
+      
+////
+
+
 const currentDate = new Date();
 
 let newArray = filteredLockend.filter(item => {
@@ -29,7 +56,8 @@ console.log("New array with remaining days more than 0:", newArray);
   return (
     <div className='bg-[#d5d5d5] dark:bg-indigo-600 transition-all h-auto w-full flex justify-center py-5'>
       <div className='absolute top-6 right-6'>
-        <button  className='bg-yellow-500 p-6 rounded-3xl'>
+        <button onClick={handleTheme} className='bg-yellow-500 p-6 rounded-3xl'>
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
         </button>
       </div>
       <div className='absolute text-gray-600'>
