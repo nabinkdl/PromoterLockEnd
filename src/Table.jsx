@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Row from './Row';
 import lockend from './lockend';
 
@@ -26,12 +26,17 @@ let newArray = filteredLockend.filter(item => {
 console.log("New array with remaining days more than 0:", newArray);
 
 
-
   return (
-    <div className='bg-[#d5d5d5] h-auto w-full flex justify-center py-5'>
+    <div className='bg-[#d5d5d5] dark:bg-indigo-600 transition-all h-auto w-full flex justify-center py-5'>
+      <div className='absolute top-6 right-6'>
+        <button onClick={handleTheme} className='bg-yellow-500 p-6 rounded-3xl'>
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </button>
+      </div>
       <div className='absolute text-gray-600'>
-        <div>
-        We disclaim responsibility for any inaccuracies in the data; this information is provided solely for learning purposes.
+        <div className=' dark:text-white transition-all'>
+        We disclaim responsibility for any inaccuracies in the data; this information is provided solely during
+         learning purposes.
        </div>
         <input
           type='text'

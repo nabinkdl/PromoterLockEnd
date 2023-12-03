@@ -7,7 +7,7 @@ function Row({data,index}) {
   var timeDifference = targetDate.getTime() - currentDate.getTime();
   var remainingDays = Math.ceil(timeDifference / (1000 * 3600 * 24))-1;
 
-
+ 
 
   return (
 
@@ -25,6 +25,7 @@ function Row({data,index}) {
           {/* <td>04</td> */}
         </tr>
    
+
         </>   
 
   )
