@@ -24,7 +24,8 @@ const Contributors = () => {
     console.log(contributors)
     return (
        <>
-        <div className='flex relative  bg-[#efefef] py-2  '>
+        <div className='flex relative  bg-[#efefef] py-2
+          '>
                 <div className='  font-semibold text-2xl mt-4 mx-4'>
                     Github Contributors: 
                 </div>
