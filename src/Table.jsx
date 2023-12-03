@@ -14,18 +14,11 @@ function Table() {
 // Original array
 
 
-// Get the current date
 const currentDate = new Date();
 
-// Filter the array and calculate remaining days
 let newArray = filteredLockend.filter(item => {
-  // Convert LockendDate to a Date object
   const lockendDate = new Date(item.LockendDate);
-  
-  // Calculate remaining days
   const remainingDays = Math.ceil((lockendDate - currentDate) / (1000 * 60 * 60 * 24));
-
-  // Include objects with remaining days more than 0
   return remainingDays > -1;
 });
 
