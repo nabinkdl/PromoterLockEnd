@@ -29,8 +29,7 @@ console.log("New array with remaining days more than 0:", newArray);
   return (
     <div className='bg-[#d5d5d5] dark:bg-indigo-600 transition-all h-auto w-full flex justify-center py-5'>
       <div className='absolute top-6 right-6'>
-        <button onClick={handleTheme} className='bg-yellow-500 p-6 rounded-3xl'>
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        <button  className='bg-yellow-500 p-6 rounded-3xl'>
         </button>
       </div>
       <div className='absolute text-gray-600'>
