@@ -13,13 +13,13 @@ function Row({data,index}) {
 
 <>
       <tr className='border-t-2 border-b-2'>
-          <th className='p-3'>{index+1}</th> 
-          <td className='p-3'>{data.SYMBOL}</td> 
-          <td className='p-3 text-center'>{data.AllotmentDate}</td> 
-          <td className='p-3 text-center'>{data.NumberOfShares}</td> 
-          <td className='p-3 text-center'>{data.PromoterShares}</td> 
-          <td className='p-3 text-center'>{data.PromoterHolding}</td> 
-          <td className='p-3 text-center'>{data.LockendDate}</td> 
+          <th className='p-3 text-center text-sm sm:text-base '>{index+1}</th> 
+          <td className='p-3 text-center text-sm sm:text-base'>{data.SYMBOL}</td> 
+          <td className='p-3 text-center text-sm sm:text-base'>{data.AllotmentDate}</td> 
+          <td className='p-3 text-center hidden lg:table-cell'>{data.NumberOfShares}</td> 
+          <td className='p-3 text-center hidden lg:table-cell'>{data.PromoterShares}</td> 
+          <td className='p-3 text-center text-sm sm:text-base'>{data.PromoterHolding}</td> 
+          <td className='p-3 text-center text-sm sm:text-base'>{data.LockendDate}</td> 
           <td className='p-3 text-center'>{remainingDays===-1?0:remainingDays}</td> 
 
           {/* <td>04</td> */}

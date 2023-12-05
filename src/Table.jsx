@@ -55,35 +55,35 @@ console.log("New array with remaining days more than 0:", newArray);
 
 return (
   <div className='bg-[#ffffff] dark:bg-slate-800 transition-all min-h-screen flex flex-col items-center py-5'>
-    <div className='text-right mt-6 mr-6'>
+    <div className=' md:absolute top-2 right-2 text-right mt-6 mr-6'>
       <button onClick={handleTheme} className='bg-[#1f1d0f] text-white p-2 rounded-md'>
         {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
       </button>
     </div>
-    <div className='text-gray-600 mt-4 mb-6 text-center'>
+    <div className='  text-gray-600 mt-4 mb-6 mr-1 text-center'>
       <div className='dark:text-white transition-all'>
         We disclaim responsibility for any inaccuracies in the data; this information is provided solely during learning purposes.
       </div>
       <input
         type='text'
         placeholder='Search'
-        className='bg-[#424242] dark:bg-slate-900 text-white w-full h-16 focus:outline-none p-4 text-2xl rounded-2xl mt-4'
+        className='bg-[#424242] dark:bg-slate-900 text-white w-full h-16 focus:outline-none p-4 text-2xl rounded-2xl mt-4 sm:mx-8'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
     <div className='bg-[#ffffff] dark:bg-slate-800 dark:text-cyan-50 transition-all rounded-md p-4 overflow-x-auto w-full'>
-      <table className="divide-dashed table-fixed w-full">
+      <table className="divide-dashed table-fixed w-full sm:text-base">
         <thead>
           <tr>
             <th className='p-3'>😄</th>
-            <th className='p-3'>Script</th>
-            <th className='p-3'>Allotment Date</th>
-            <th className='p-3'>Number Of Shares</th>
-            <th className='p-3'>Promoter Shares</th>
-            <th className='p-3'>Promoter Holding</th>
-            <th className='p-3'>Lockend Date</th>
-            <th className='p-3'>Remaining Days</th>
+            <th className=' text-xs lg:text-base'>Script</th>
+            <th className='p-3 text-xs lg:text-base'>Allotment Date</th>
+            <th className='p-3 hidden lg:table-cell'>Number Of Shares</th>
+            <th className='p-3 hidden lg:table-cell'>Promoter Shares</th>
+            <th className='p-3 text-xs lg:text-base'>Promoter Holding</th>
+            <th className='p-3 text-xs lg:text-base'>Lockend Date</th>
+            <th className='p-3 text-xs lg:text-base'>Remaining Days</th>
           </tr>
         </thead>
         <tbody>
