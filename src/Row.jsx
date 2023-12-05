@@ -23,7 +23,7 @@ function Row({data,index}) {
           <td className='p-3 text-center text-sm sm:text-base'>{data.AllotmentDate}</td> 
           <td className='p-3 text-center hidden lg:table-cell'>{data.NumberOfShares}</td> 
           <td className='p-3 text-center hidden lg:table-cell'>{data.PromoterShares}</td> 
-          <td className='p-3 text-center cursor-pointer  bg-gray-300 text-sm sm:text-base relative' onClick={ActiveChart}>  {pieActive? <div><Pie promoter={data.PromoterHolding}/></div> :data.PromoterHolding}</td> 
+          <td className='p-3 text-center cursor-pointer  bg-gray-300 text-sm sm:text-base relative dark:bg-slate-700' onClick={ActiveChart}>  {pieActive? <div><Pie promoter={data.PromoterHolding}/></div> :data.PromoterHolding}</td> 
           <td className='p-3 text-center text-sm sm:text-base'>{data.LockendDate}</td> 
           <td className='p-3 text-center'>{remainingDays===-1?0:remainingDays}</td> 
 
