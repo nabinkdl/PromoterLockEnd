@@ -12,9 +12,9 @@ function Row({data,index}) {
   return (
 
 <>
-      <tr>
-          <th>{index+1}</th> 
-          <td>{data.SYMBOL}</td> 
+      <tr className='border-t-2 border-b-2'>
+          <th className='p-3'>{index+1}</th> 
+          <td className='p-3'>{data.SYMBOL}</td> 
           <td className='p-3 text-center'>{data.AllotmentDate}</td> 
           <td className='p-3 text-center'>{data.NumberOfShares}</td> 
           <td className='p-3 text-center'>{data.PromoterShares}</td> 

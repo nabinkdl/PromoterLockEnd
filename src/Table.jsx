@@ -53,49 +53,49 @@ let newArray = filteredLockend.filter(item => {
 console.log("New array with remaining days more than 0:", newArray);
 
 
-  return (
-    <div className='bg-[#d5d5d5] dark:bg-indigo-600 transition-all h-auto w-full flex justify-center py-5'>
-      <div className='absolute top-6 right-6'>
-        <button onClick={handleTheme} className='bg-yellow-500 p-6 rounded-3xl'>
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </button>
-      </div>
-      <div className='absolute text-gray-600'>
-        <div className=' dark:text-white transition-all'>
-        We disclaim responsibility for any inaccuracies in the data; this information is provided solely during
-         learning purposes.
-       </div>
-        <input
-          type='text'
-          placeholder='Search'
-          className='bg-[#1f1d0f] text-white items-center w-full h-16 focus:outline-none flex-auto absolute top-9 p-10 text-2xl rounded-2xl'
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-      <div className='bg-[#1f1d0f] text-white mt-32 mb-5 rounded-md p-4'>
-        <table className="divide-dashed">
-          <thead>
-            <tr>
-              <th className='p-3'>😄</th>
-              <th className='p-3'>Script</th>
-              <th className='p-3'>Allotment Date</th>
-              <th className='p-3'>Number Of Shares</th>
-              <th className='p-3'>Promoter Shares</th>
-              <th className='p-3'>Promoter Holding</th>
-              <th className='p-3'>Lockend Date</th>
-              <th className='p-3'>Remaining Days</th>
-            </tr>
-          </thead>
-          <tbody>
-            {newArray.map((data,index) => {
-              return <Row key={data.SN} data={data}  index={index}/>;
-            })}
-          </tbody>
-        </table>
-      </div>
+return (
+  <div className='bg-[#ffffff] dark:bg-slate-800 transition-all min-h-screen flex flex-col items-center py-5'>
+    <div className='text-right mt-6 mr-6'>
+      <button onClick={handleTheme} className='bg-[#1f1d0f] text-white p-2 rounded-md'>
+        {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+      </button>
     </div>
-  );
+    <div className='text-gray-600 mt-4 mb-6 text-center'>
+      <div className='dark:text-white transition-all'>
+        We disclaim responsibility for any inaccuracies in the data; this information is provided solely during learning purposes.
+      </div>
+      <input
+        type='text'
+        placeholder='Search'
+        className='bg-[#424242] dark:bg-slate-900 text-white w-full h-16 focus:outline-none p-4 text-2xl rounded-2xl mt-4'
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </div>
+    <div className='bg-[#ffffff] dark:bg-slate-800 dark:text-cyan-50 transition-all rounded-md p-4 overflow-x-auto w-full'>
+      <table className="divide-dashed table-fixed w-full">
+        <thead>
+          <tr>
+            <th className='p-3'>😄</th>
+            <th className='p-3'>Script</th>
+            <th className='p-3'>Allotment Date</th>
+            <th className='p-3'>Number Of Shares</th>
+            <th className='p-3'>Promoter Shares</th>
+            <th className='p-3'>Promoter Holding</th>
+            <th className='p-3'>Lockend Date</th>
+            <th className='p-3'>Remaining Days</th>
+          </tr>
+        </thead>
+        <tbody>
+          {newArray.map((data, index) => (
+            <Row key={data.SN} data={data} index={index} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+);
 }
+
 
 export default Table;
