@@ -12,6 +12,7 @@ function Row({data,index}) {
   return (
 
 <>
+
       <tr className='border-t-2 border-b-2'>
           <td className=' m-1 p-4 text-center text-sm sm:text-base '>{index+1}</td> 
           <td className='text-center text-sm sm:text-base'>{data.SYMBOL}</td> 

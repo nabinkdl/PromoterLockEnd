@@ -73,11 +73,12 @@ return (
       </div>
       
     </div>
+
     <div className='bg-[#ffffff] dark:bg-slate-800 dark:text-cyan-50 transition-all rounded-md  overflow-x-auto w-full'>
       <table className="divide-dashed table-fixed w-full sm:text-base">
         <thead>
           <tr>
-            <th className='p-0'>😄</th>
+            <th className='w-2 pl-3'>😄</th>
             <th className='text-xs lg:text-base'>Script</th>
             <th className='p-3 text-xs lg:text-base'>Allotment Date</th>
             <th className='p-3 hidden lg:table-cell'>Number Of Shares</th>
