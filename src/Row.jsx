@@ -13,8 +13,8 @@ function Row({data,index}) {
 
 <>
       <tr className='border-t-2 border-b-2'>
-          <th className='p-3 text-center text-sm sm:text-base '>{index+1}</th> 
-          <td className='p-3 text-center text-sm sm:text-base'>{data.SYMBOL}</td> 
+          <td className=' m-1 p-4 text-center text-sm sm:text-base '>{index+1}</td> 
+          <td className='text-center text-sm sm:text-base'>{data.SYMBOL}</td> 
           <td className='p-3 text-center text-sm sm:text-base'>{data.AllotmentDate}</td> 
           <td className='p-3 text-center hidden lg:table-cell'>{data.NumberOfShares}</td> 
           <td className='p-3 text-center hidden lg:table-cell'>{data.PromoterShares}</td> 
