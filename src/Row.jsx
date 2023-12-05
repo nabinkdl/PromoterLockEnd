@@ -12,8 +12,8 @@ function Row({data,index}) {
   return (
 
 <>
-      <tr className='border-t-2 border-b-2'>
-          <th className='p-3'>{index+1}</th> 
+      <tr className='border-t-2 border-b-2 text-xs sm:text-base '>
+          <th className='pl-1'>{index+1}</th> 
           <td className='p-3'>{data.SYMBOL}</td> 
           <td className='p-3 text-center'>{data.AllotmentDate}</td> 
           <td className='p-3 text-center'>{data.NumberOfShares}</td> 

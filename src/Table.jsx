@@ -72,18 +72,18 @@ return (
         onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
-    <div className='bg-[#ffffff] dark:bg-slate-800 dark:text-cyan-50 transition-all rounded-md p-4 overflow-x-auto w-full'>
+    <div className='bg-[#ffffff] dark:bg-slate-800 dark:text-cyan-50 transition-all rounded-md  w-full'>
       <table className="divide-dashed table-fixed w-full">
         <thead>
-          <tr>
-            <th className='p-3'>😄</th>
-            <th className='p-3'>Script</th>
-            <th className='p-3'>Allotment Date</th>
-            <th className='p-3'>Number Of Shares</th>
-            <th className='p-3'>Promoter Shares</th>
-            <th className='p-3'>Promoter Holding</th>
-            <th className='p-3'>Lockend Date</th>
-            <th className='p-3'>Remaining Days</th>
+          <tr className='text-xs sm:text-base font-light md:font-medium '>
+            <th className='w-3 md:w-10'></th>
+            <th className='table-cell'>Script</th>
+            <th className='table-cell'>Allotment Date</th>
+            <th>Number Of Shares</th>
+            <th>Promoter Shares</th>
+            <th>Promoter Holding</th>
+            <th>Lockend Date</th>
+            <th>Remaining Days</th>
           </tr>
         </thead>
         <tbody>
