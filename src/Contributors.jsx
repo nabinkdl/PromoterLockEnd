@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const Contributors = () => {
     const [contributors, setContributors] = useState([]);
-    const repoOwner = 'poudelsanchit';
-    const repoName = 'DateSnaps';
+    const repoOwner = 'nabinkdl';
+    const repoName = 'PromoterLockEnd';
     const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`;
 
     // const accessToken = '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'; // Replace with your actual access token
@@ -24,8 +24,7 @@ const Contributors = () => {
     console.log(contributors)
     return (
        <>
-        <div className='flex relative  bg-[#efefef] py-2
-          '>
+        <div className='flex relative   py-2 dark:bg-slate-800 dark:text-blue-100'>
                 <div className='  font-semibold text-2xl mt-4 mx-4'>
                     Github Contributors: 
                 </div>
