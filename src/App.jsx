@@ -8,6 +8,7 @@ ReactGA.initialize(TRACKING_ID);
 
 function App() {
   useEffect(() => {
+    // Track initial page view
     ReactGA.pageview(window.location.pathname);
 
     // Track a custom event when the component mounts
